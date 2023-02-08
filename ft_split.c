@@ -6,11 +6,11 @@
 /*   By: cbessonn <cbessonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:52:10 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/01/20 18:53:01 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/02/08 11:23:52 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	is_sep(char c, char sep)
 {
@@ -57,7 +57,7 @@ static char	*str_dup(char const *s, char c)
 	return (array);
 }
 
-static void	*free_array(char **array)
+bool	free_array(char **array)
 {
 	int	i;
 
@@ -68,33 +68,33 @@ static void	*free_array(char **array)
 		i++;
 	}
 	free (array);
-	return (0);
+	return (false);
 }
 
-char	**ft_split(char const *s, char c)
+bool	ft_split(t_str_array *array, char const *s, char c)
 {
-	char	**array;
 	int		i;
 
 	if (!s)
-		return (0);
+		return (false);
 	i = 0;
-	array = malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (array == 0)
-		return (0);
+	array->ptr = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (array->ptr == 0)
+		return (false);
 	while (*s)
 	{
 		while (*s && is_sep(*s, c))
 			s++;
 		if (*s && !is_sep(*s, c))
 		{
-			array[i] = str_dup(s, c);
-			if (!array[i++])
-				return (free_array(array));
+			array->ptr[i] = str_dup(s, c);
+			if (!array->ptr[i++])
+				return (free_array(array->ptr));
 			while (*s && !is_sep(*s, c))
 				s++;
 		}
 	}
-	array[i] = 0;
-	return (array);
+	array->ptr[i] = 0;
+	array->size = i;
+	return (true);
 }
