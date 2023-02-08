@@ -6,7 +6,7 @@
 /*   By: cbessonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:20:58 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/02/08 11:11:51 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:03:44 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <stdbool.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -63,7 +63,8 @@ void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 char	*ft_strtrim(char const *s1, char const *set);
-bool	**ft_split(char const *s, char c);
+bool	ft_split(t_str_array *array, char const *s, char c);
+void	ft_str_array_free(t_str_array *array);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
