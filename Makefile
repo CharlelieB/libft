@@ -6,7 +6,7 @@
 #    By: cbessonn <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 15:31:44 by cbessonn          #+#    #+#              #
-#    Updated: 2023/02/08 12:03:08 by cbessonn         ###   ########.fr        #
+#    Updated: 2023/02/08 15:36:03 by cbessonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft
 		ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c \
 		ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c \
 		ft_strncmp.c ft_strcmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c \
-		ft_toupper.c ft_swap.c ft_abs.c ft_str_array_free.c
+		ft_toupper.c ft_swap.c ft_abs.c ft_str_array_free.c get_next_line/get_next_line_utils.c get_next_line/get_next_line.c
 
 OBJ = $(SRC:.c=.o) 
 
