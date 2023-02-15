@@ -6,7 +6,7 @@
 /*   By: cbessonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:20:58 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/02/08 12:03:44 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/02/15 15:12:17 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ typedef struct s_str_array
 
 void	ft_putnbr_fd(int n, int fd);
 int		ft_atoi(const char *nptr);
+int		ft_atoi_base(const char *nptr, const char *base);
 char	*ft_itoa(int n);
 int		ft_abs(int nb);
 void	ft_swap(int *a, int *b);
+int		ft_power(int x, unsigned int y);
 
 /* ----------------- CHAR ----------------- */
 
