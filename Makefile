@@ -6,7 +6,7 @@
 #    By: cbessonn <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 15:31:44 by cbessonn          #+#    #+#              #
-#    Updated: 2023/02/16 13:43:09 by cbessonn         ###   ########.fr        #
+#    Updated: 2023/03/06 15:15:24 by cbessonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ AR = ar rcs
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I./includes -o $@ -c $<
+	$(CC) $(CFLAGS) -I./include -o $@ -c $<
 
 $(NAME): $(OBJ)
 	$(AR) $@ $^

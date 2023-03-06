@@ -6,14 +6,14 @@
 /*   By: cbessonn <cbessonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 21:11:33 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/02/09 16:28:04 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/03/06 15:14:59 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 4096
 # endif
 # include "libft.h"
 # define BF_SIZE BUFFER_SIZE
