@@ -6,7 +6,7 @@
 /*   By: cbessonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 12:01:23 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/02/08 12:02:09 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/04/10 11:31:44 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_str_array_free(t_str_array *array)
 	i = 0;
 	if (array->size > 0)
 	{
-		while ((array->ptr[i]))
+		while (i < array->size)
 		{
 			free(array->ptr[i]);
 			i++;
