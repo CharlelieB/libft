@@ -3,30 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbessonn <cbessonn@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cbessonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 20:18:06 by cbessonn          #+#    #+#             */
-/*   Updated: 2022/11/15 19:33:57 by cbessonn         ###   ########.fr       */
+/*   Created: 2023/06/19 12:52:08 by cbessonn          #+#    #+#             */
+/*   Updated: 2023/06/19 13:07:55 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	get_power(int nb)
 {
-	if (n == -2147483648)
-		ft_putstr_fd("-2147483648", fd);
-	else if (n < 0)
+	int	power;
+
+	power = 1;
+	nb = nb / 10;
+	while (nb)
 	{
-		ft_putchar_fd('-', fd);
-		n = -n;
-		ft_putnbr_fd(n, fd);
+		nb /= 10;
+		power *= 10;
 	}
-	else if (n > 9)
+	return (power);
+}
+
+ssize_t	ft_putnbr_fd(int nb, int fd)
+{
+	char		buffer[12];
+	int			res;
+	int			power;
+	short		i;
+	long int	unb;
+
+	unb = nb;
+	i = 0;
+	if (nb < 0)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		buffer[i++] = '-';
+		unb = -unb;
 	}
-	else
-		ft_putchar_fd(n + '0', fd);
+	power = get_power(unb);
+	while (power)
+	{
+		res = unb / power;
+		buffer[i++] = 48 + res;
+		unb = unb - (res * power);
+		power /= 10;
+	}
+	buffer[i++] = 0;
+	return (write(fd, buffer, i));
 }
