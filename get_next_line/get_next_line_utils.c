@@ -6,7 +6,7 @@
 /*   By: cbessonn <cbessonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 21:14:13 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/02/09 16:27:50 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/10/16 17:28:50 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ bool	line_allocate(char **line, int *malloc_size)
 	int		i;
 
 	i = 0;
-	*malloc_size *= 4;
+	*malloc_size = ft_next_power(*malloc_size);
 	str = malloc(*malloc_size);
 	if (!str)
 	{
