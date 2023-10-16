@@ -6,11 +6,11 @@
 /*   By: cbessonn <cbessonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 17:25:13 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/10/16 17:26:58 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/10/16 18:29:16 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	next_power(unsigned int nb)
+unsigned int	ft_next_power(unsigned int nb)
 {
 	if (!nb)
 		return (2);
