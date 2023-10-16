@@ -6,7 +6,7 @@
 /*   By: cbessonn <cbessonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 12:14:02 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/02/09 15:59:47 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/10/16 18:35:24 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ bool	line_read(char *buffer, int fd, char **line, int *n)
 	return (true);
 }
 
-bool	get_next_line(int fd, char **line)
+bool	get_next_line(int fd, char **line, unsigned int *lsize)
 {
 	static char	buffer[BF_SIZE + 1];
 	int			n;
@@ -95,6 +95,6 @@ bool	get_next_line(int fd, char **line)
 	if (!line_read(buffer, fd, line, &n))
 		return (false);
 	if (*line)
-		*line = line_resize(line);
+		*line = line_resize(line, lsize);
 	return (true);
 }

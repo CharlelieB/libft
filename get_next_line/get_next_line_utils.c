@@ -6,7 +6,7 @@
 /*   By: cbessonn <cbessonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 21:14:13 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/10/16 17:28:50 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/10/16 18:35:06 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	line_edit(char **line, char *buffer, int *line_size)
 	*line_size = i;
 }
 
-char	*line_resize(char **line)
+char	*line_resize(char **line, unsigned int *lsize)
 {
 	char	*str;
 	int		i;
@@ -71,5 +71,6 @@ char	*line_resize(char **line)
 	}
 	str[i] = 0;
 	free(*line);
+	*lsize = i;
 	return (str);
 }

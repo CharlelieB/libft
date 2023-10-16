@@ -6,7 +6,7 @@
 /*   By: cbessonn <cbessonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 21:11:33 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/03/06 15:14:59 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/10/16 18:36:05 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 bool	line_allocate(char **line, int *malloc_size);
 void	line_edit(char **line, char *buffer, int *line_size);
 bool	line_read(char *buffer, int fd, char **line, int *n);
-char	*line_resize(char **line);
+char	*line_resize(char **line, unsigned int *lsize);
 bool	buffer_check(char *buffer, int n);
 void	buffer_clean(char *buffer, bool line_found);
 bool	buffer_read(char *buffer, int fd, int *n);
-bool	get_next_line(int fd, char **line);
+bool	get_next_line(int fd, char **line, unsigned int *lsize);
 
 #endif
