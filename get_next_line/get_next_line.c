@@ -6,7 +6,7 @@
 /*   By: cbessonn <cbessonn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 12:14:02 by cbessonn          #+#    #+#             */
-/*   Updated: 2023/10/16 18:35:24 by cbessonn         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:54:25 by cbessonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ bool	get_next_line(int fd, char **line, unsigned int *lsize)
 	if (fd < 0 || fd > 1023 || BF_SIZE <= 0)
 		return (false);
 	n = BF_SIZE;
-	if (!line_read(buffer, fd, line, &n))
+	if (!line_read(buffer, fd, line, &n) && !(*line))
 		return (false);
 	if (*line)
 		*line = line_resize(line, lsize);
